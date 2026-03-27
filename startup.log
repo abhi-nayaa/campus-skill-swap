@@ -1,0 +1,51 @@
+--- Startup ---
+1: require dotenv
+2: require express
+3: require cors
+4: require http
+5: require socket.io
+6: require connectDB
+9: app init
+10: server init
+11: io init
+19: connectDB call
+24: app.use cors
+25: app.use json
+28: socket handler
+31: auth routes
+32: user routes
+33: public routes
+34: skill routes
+CRITICAL ERROR: argument handler must be a function
+TypeError: argument handler must be a function
+    at Route.<computed> [as put] (C:\Users\abhin\Campus skill swap\backend\node_modules\router\lib\route.js:228:15)
+    at Router.<computed> [as put] (C:\Users\abhin\Campus skill swap\backend\node_modules\router\index.js:448:19)
+    at Object.<anonymous> (C:\Users\abhin\Campus skill swap\backend\routes\skillRoutes.js:9:8)
+    at Module._compile (node:internal/modules/cjs/loader:1812:14)
+    at Object..js (node:internal/modules/cjs/loader:1943:10)
+    at Module.load (node:internal/modules/cjs/loader:1533:32)
+    at Module._load (node:internal/modules/cjs/loader:1335:12)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.require (node:internal/modules/cjs/loader:1556:12)
+    at require (node:internal/modules/helpers:152:16)
+20: seedAdmin require
+Start Audit
+auth ok
+user ok
+public ok
+skill ok
+request ok
+session ok
+credit ok
+FAIL: mongoose is not defined
+ReferenceError: mongoose is not defined
+    at Object.<anonymous> (C:\Users\abhin\Campus skill swap\backend\models\Feedback.js:1:24)
+    at Module._compile (node:internal/modules/cjs/loader:1812:14)
+    at Object..js (node:internal/modules/cjs/loader:1943:10)
+    at Module.load (node:internal/modules/cjs/loader:1533:32)
+    at Module._load (node:internal/modules/cjs/loader:1335:12)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.require (node:internal/modules/cjs/loader:1556:12)
+    at require (node:internal/modules/helpers:152:16)
+    at Object.<anonymous> (C:\Users\abhin\Campus skill swap\backend\controllers\feedbackController.js:1:18)
+    at Module._compile (node:internal/modules/cjs/loader:1812:14)

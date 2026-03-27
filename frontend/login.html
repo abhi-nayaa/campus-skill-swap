@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | Campus Skill Swap</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="login">
+  <main class="auth-shell">
+    <section class="auth-side">
+      <div class="auth-brand-block">
+        <a class="brand" href="index.html">Campus Skill Swap</a>
+        <p class="eyebrow">Welcome back</p>
+      </div>
+      <h1>Welcome back to your learning community.</h1>
+      <p class="auth-text">
+        Log in to view your dashboard, manage requests, and continue swapping skills with students on campus.
+      </p>
+      <div class="auth-side-points">
+        <span>Track your learning requests</span>
+        <span>Connect with peer mentors</span>
+        <span>Earn and use skill credits</span>
+      </div>
+      <button class="btn auth-back-btn" type="button" data-nav="index.html">Back to Home</button>
+    </section>
+
+    <section class="auth-card">
+      <div class="auth-card-header">
+        <h2>Login</h2>
+        <p class="form-subtitle">Use the account you created on this device.</p>
+      </div>
+      <form id="loginForm" class="auth-form">
+        <label for="loginEmail">Email</label>
+        <input id="loginEmail" name="email" type="email" placeholder="Enter your email" required>
+
+        <div style="display: flex; justify-content: space-between; align-items: baseline;">
+          <label for="loginPassword" style="margin-bottom: 0;">Password</label>
+          <a href="forgot-password.html" style="font-size: 0.85rem; color: #d79a58; text-decoration: none; font-weight: 500;">Forgot password?</a>
+        </div>
+        <input id="loginPassword" name="password" type="password" placeholder="Enter your password" minlength="6" required>
+
+        <button class="btn auth-submit-btn btn-block" type="submit">Login</button>
+      </form>
+
+      <p id="loginMessage" class="form-message" aria-live="polite"></p>
+
+      <p class="auth-switch">
+        New here?
+        <a href="register.html">Create an account</a>
+      </p>
+    </section>
+  </main>
+  <script src="js/app.js"></script>
+</body>
+</html>

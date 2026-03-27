@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skill Exchange Hub</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous"
+  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/landing-theme.css">
+</head>
+<body data-page="landing">
+  <nav class="navbar navbar-expand-lg campus-navbar fixed-top">
+    <div class="container">
+      <a class="navbar-brand campus-brand" href="#home">
+        <span class="brand-badge brand-badge-svg" aria-hidden="true">
+          <svg viewBox="0 0 64 64" role="img" focusable="false">
+            <defs>
+              <linearGradient id="brandLoop" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#ffd39f"></stop>
+                <stop offset="100%" stop-color="#d1853f"></stop>
+              </linearGradient>
+            </defs>
+            <circle cx="18" cy="18" r="6" fill="url(#brandLoop)"></circle>
+            <circle cx="46" cy="46" r="6" fill="url(#brandLoop)"></circle>
+            <circle cx="46" cy="18" r="4" fill="#ffffff"></circle>
+            <circle cx="18" cy="46" r="4" fill="#ffffff"></circle>
+            <path d="M22 18h16a10 10 0 0 1 0 20H24" fill="none" stroke="url(#brandLoop)" stroke-width="5" stroke-linecap="round"></path>
+            <path d="M42 46H26a10 10 0 0 1 0-20h14" fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round" opacity="0.92"></path>
+          </svg>
+        </span>
+        <span>Skill Exchange Hub</span>
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#campusNavbar"
+        aria-controls="campusNavbar"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="campusNavbar">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+          <li class="nav-item"><a class="nav-link" href="#how-it-works">How It Works</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+        <div class="d-flex gap-2 campus-nav-actions">
+          <a class="btn campus-btn-outline" href="login.html">Login</a>
+          <a class="btn campus-btn-primary" href="register.html">Register</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="campus-page">
+    <section id="home" class="campus-section hero-section">
+      <div class="container">
+        <div class="hero-frame">
+          <div class="row g-0 align-items-stretch">
+            <div class="col-lg-5">
+              <div class="hero-visual">
+                <div class="hero-portrait-card">
+                  <div class="hero-image-shell">
+                    <div class="hero-image"></div>
+                    <div class="hero-image-caption">
+                      <span>Skill Exchange Hub</span>
+                      <strong>Teach What You Know. Learn What You Don't.</strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-7">
+              <div class="hero-content">
+                <p class="section-kicker">Campus collaboration platform</p>
+                <h1>Trade Skills. Build Confidence. Grow Together.</h1>
+                <p class="hero-description">
+                  Campus Skill Swap helps students share real-world talents, earn credits by teaching,
+                  and learn directly from peers in a trusted campus community.
+                </p>
+                <div class="hero-action-row">
+                  <a class="btn campus-btn-primary" href="register.html">Start Swapping Skills</a>
+                  <a class="btn campus-btn-light" href="login.html">Login</a>
+                </div>
+                <div class="hero-mini-stats row g-3">
+                  <div class="col-sm-4">
+                    <div class="mini-stat">
+                      <span class="mini-stat-icon" aria-hidden="true">S</span>
+                      <strong id="statSessionCount">0+</strong>
+                      <span>Sessions scheduled</span>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="mini-stat">
+                      <span class="mini-stat-icon" aria-hidden="true">U</span>
+                      <strong id="statUserCount">0+</strong>
+                      <span>Active Students</span>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="mini-stat">
+                      <span class="mini-stat-icon" aria-hidden="true">K</span>
+                      <strong id="statSkillCount">0+</strong>
+                      <span>Skills available</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="campus-section section-light">
+      <div class="container">
+        <div class="section-heading text-center">
+          <p class="section-kicker">About us</p>
+          <h2>What Campus Skill Swap Is All About</h2>
+          <p>
+            Campus Skill Swap is designed as a frontend landing experience for a web application
+            that connects students who want to learn with students who are ready to teach.
+            It helps users showcase their strengths, discover useful skills, and exchange knowledge
+            through a simple and rewarding process.
+          </p>
+        </div>
+        <div class="row g-4 mt-2">
+          <div class="col-md-4">
+            <div class="info-panel">
+              <h3>Mission</h3>
+              <p>Make peer-to-peer learning simple, practical, and accessible inside every campus community.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="info-panel">
+              <h3>Vision</h3>
+              <p>Create a student network where teaching and learning happen naturally beyond the classroom.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="info-panel">
+              <h3>Value</h3>
+              <p>Encourage collaboration, confidence, and continuous growth through shared knowledge.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="featured-skills" class="campus-section bg-dark text-light border-top border-secondary">
+      <div class="container">
+        <div class="section-heading text-center mb-5">
+          <p class="section-kicker">Recommended</p>
+          <h2>Featured Skills</h2>
+          <p>Explore some of the most popular skills being shared on campus right now.</p>
+        </div>
+        <div class="featured-skills-grid" id="landingSkillsContainer"></div>
+        <div class="featured-skills-footer">
+          <a class="view-all-skills-btn" href="skills.html">View All Skills &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="campus-section section-dark">
+      <div class="container">
+        <div class="section-heading text-center section-heading-light">
+          <p class="section-kicker">Features</p>
+          <h2>Built For A Better Student Experience</h2>
+          <p>
+            The platform combines discovery, skill sharing, and simple interaction flows
+            so students can quickly find value from the moment they join.
+          </p>
+        </div>
+        <div class="row g-4 mt-2">
+          <div class="col-md-6 col-xl-3">
+            <div class="feature-card">
+              <div class="feature-icon">01</div>
+              <h3>Skill Listings</h3>
+              <p>Students can post skills they are ready to teach and browse what others offer.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-xl-3">
+            <div class="feature-card">
+              <div class="feature-icon">02</div>
+              <h3>Request System</h3>
+              <p>Users can send learning requests and manage ongoing conversations more easily.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-xl-3">
+            <div class="feature-card">
+              <div class="feature-icon">03</div>
+              <h3>Credit Exchange</h3>
+              <p>Teaching earns credits that can later be used to learn from others.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-xl-3">
+            <div class="feature-card">
+              <div class="feature-icon">04</div>
+              <h3>Student Profiles</h3>
+              <p>Each user builds a profile that highlights interests, strengths, and learning goals.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="how-it-works" class="campus-section section-light">
+      <div class="container">
+        <div class="section-heading text-center">
+          <p class="section-kicker">How it works</p>
+          <h2>Simple Steps To Start Learning</h2>
+          <p>
+            The process is designed to stay easy for first-time users while supporting repeated skill exchange.
+          </p>
+        </div>
+        <div class="row g-4 mt-2">
+          <div class="col-md-6 col-xl-3">
+            <div class="step-card">
+              <span class="step-number">1</span>
+              <h3>Register</h3>
+              <p>Create your account and join the Campus Skill Swap community.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-xl-3">
+            <div class="step-card">
+              <span class="step-number">2</span>
+              <h3>Add Skills</h3>
+              <p>List the skills you can teach so other students can discover you.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-xl-3">
+            <div class="step-card">
+              <span class="step-number">3</span>
+              <h3>Send Requests</h3>
+              <p>Find a useful skill and request a learning session from a peer.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-xl-3">
+            <div class="step-card">
+              <span class="step-number">4</span>
+              <h3>Exchange Credits</h3>
+              <p>Teach, learn, and continue growing through a fair swap model.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="campus-section contact-section">
+      <div class="container">
+        <div class="row g-4 align-items-stretch">
+          <div class="col-lg-6">
+            <div class="contact-card">
+              <p class="section-kicker">Contact us</p>
+              <h2 class="touch-heading">Get in Touch</h2>
+              <p>
+                Have questions, feedback, or collaboration ideas? Reach out and our team will connect with you soon.
+              </p>
+              <ul class="contact-list touch-list">
+                <li class="touch-item">
+                  <span class="touch-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d="M4 6h16v12H4z"></path><path d="m4 7 8 6 8-6"></path></svg>
+                  </span>
+                  <span><strong>Email:</strong> <a class="touch-link" href="mailto:support@campusskillswap.com">support@campusskillswap.com</a></span>
+                </li>
+                <li class="touch-item">
+                  <span class="touch-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.3 19.3 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1l-1.3 1.3a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.8.3 1.7.6 2.6.7A2 2 0 0 1 22 16.9z"></path></svg>
+                  </span>
+                  <span><strong>Phone:</strong> <a class="touch-link" href="tel:+919876543210">+91 98765 43210</a></span>
+                </li>
+                <li class="touch-item">
+                  <span class="touch-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12Z"></path><circle cx="12" cy="10" r="2.7"></circle></svg>
+                  </span>
+                  <span><strong>Location:</strong> Student Innovation Hub, Main Campus</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="contact-card auth-cta-card">
+              <p class="section-kicker">Get started</p>
+              <h2>Login Or Register To Continue</h2>
+              <p>
+                Already have an account? Log in to continue. New users can register and start listing their skills.
+              </p>
+              <div class="d-flex flex-column flex-sm-row gap-3 mt-4">
+                <a class="btn campus-btn-primary" href="register.html">Register</a>
+                <a class="btn campus-btn-outline-dark" href="login.html">Login</a>
+              </div>
+              <div class="login-hint mt-4">
+                <strong>Login details:</strong>
+                <span>Use the email and password you created on the register page.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"
+  ></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

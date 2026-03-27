@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register | Campus Skill Swap</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="register">
+  <main class="auth-shell">
+    <section class="auth-side">
+      <a class="brand" href="index.html">Campus Skill Swap</a>
+      <p class="eyebrow">Create account</p>
+      <h1>Join your campus learning network.</h1>
+      <p class="auth-text">
+        Register to teach what you know, earn credits, and request skills from other students.
+      </p>
+      <button class="btn auth-back-btn" type="button" data-nav="index.html">Back to Home</button>
+    </section>
+
+    <section class="auth-card">
+      <h2>Register</h2>
+      <p class="form-subtitle">Fill in your details to get started.</p>
+      <form id="registerForm" class="auth-form">
+        <label for="registerName">Full Name</label>
+        <input id="registerName" name="name" type="text" placeholder="Enter your full name" required minlength="2" maxlength="50">
+
+        <label for="registerEmail">Email</label>
+        <input id="registerEmail" name="email" type="email" placeholder="Enter your email" required>
+
+        <label for="registerPassword">Password</label>
+        <input id="registerPassword" name="password" type="password" placeholder="Create a password" required minlength="8" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" title="Min 8 chars, 1 uppercase, 1 lowercase, 1 number, 1 special character">
+
+        <label for="registerContact">Contact Number</label>
+        <input id="registerContact" name="contact" type="tel" placeholder="Enter your contact number" required pattern="\d{10}" title="Please enter a 10-digit phone number">
+
+        <label for="registerCampus">Campus</label>
+        <input id="registerCampus" name="campus" type="text" placeholder="Enter your college or university" required minlength="3" maxlength="100">
+
+        <label for="registerDepartment">Department</label>
+        <input id="registerDepartment" name="department" type="text" placeholder="e.g. Computer Science" minlength="2" maxlength="100">
+
+        <label for="registerYear">Year</label>
+        <input id="registerYear" name="year" type="text" placeholder="e.g. 3rd Year" maxlength="20">
+
+        <label for="registerBio">Short Bio</label>
+        <textarea id="registerBio" name="bio" placeholder="Tell us about yourself..." maxlength="500"></textarea>
+
+        <div class="skills-builder">
+          <div class="skills-builder-header">
+            <label>Skills You Can Teach</label>
+            <button class="btn campus-btn-outline-dark add-skill-btn" id="addSkillRow" type="button">Add Skill</button>
+          </div>
+          <div id="skillsContainer" class="skill-rows">
+            <div class="skill-row">
+              <input name="skill_name" type="text" placeholder="Skill name, e.g. Guitar" required minlength="2" maxlength="50">
+              <select name="skill_level" required>
+                <option value="">Select level</option>
+                <option value="Beginner">Beginner</option>
+                <option value="Intermediate">Intermediate</option>
+                <option value="Advanced">Advanced</option>
+              </select>
+              <button class="remove-skill-btn" type="button" aria-label="Remove skill">x</button>
+            </div>
+          </div>
+        </div>
+
+        <button class="btn auth-submit-btn btn-block register-submit-btn" type="submit">Create Account</button>
+      </form>
+
+      <p id="registerMessage" class="form-message" aria-live="polite"></p>
+
+      <p class="auth-switch">
+        Already registered?
+        <a href="login.html">Login here</a>
+      </p>
+    </section>
+  </main>
+  <script src="js/app.js"></script>
+</body>
+</html>

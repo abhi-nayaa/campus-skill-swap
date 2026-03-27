@@ -1,0 +1,37 @@
+services:
+  app:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: skillswap_app
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+    environment:
+      PORT: 3000
+      MONGO_URI: mongodb://mongo:27017/skillswap
+      JWT_SECRET: ${JWT_SECRET:-campus_skill_swap_secret_key_2026}
+      NODE_ENV: development
+    depends_on:
+      mongo:
+        condition: service_healthy
+    command: npm run dev
+
+  mongo:
+    image: mongo:latest
+    container_name: skillswap_db
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 20s
+
+volumes:
+  mongo_data:

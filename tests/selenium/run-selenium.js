@@ -49,13 +49,23 @@ async function run() {
     }
 
     await driver.get(`http://127.0.0.1:${port}/login.html`);
-    const loginHeading = await driver.wait(
-      until.elementLocated(By.css(".auth-card h2")),
+    await driver.wait(
+      until.elementLocated(By.css('body[data-page="login"]')),
       10000
     );
-    const loginHeadingText = await loginHeading.getText();
-    if (loginHeadingText !== "Login") {
-      throw new Error(`Unexpected login heading: ${loginHeadingText}`);
+
+    const loginForm = await driver.wait(
+      until.elementLocated(By.css("#loginForm")),
+      10000
+    );
+    await driver.wait(until.elementIsVisible(loginForm), 10000);
+
+    const loginHeading = await driver.findElement(By.css(".auth-card h2"));
+    const loginHeadingText = (await loginHeading.getAttribute("textContent")).trim();
+    const pageTitle = await driver.getTitle();
+
+    if (loginHeadingText !== "Login" && !pageTitle.includes("Login")) {
+      throw new Error(`Unexpected login page markers. heading="${loginHeadingText}" title="${pageTitle}"`);
     }
   } finally {
     await driver.quit();

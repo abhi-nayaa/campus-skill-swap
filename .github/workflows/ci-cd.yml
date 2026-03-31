@@ -8,8 +8,6 @@ env:
   NODE_VERSION: lts/*
   MONGO_URI: ${{ secrets.MONGO_URI }}
   JWT_SECRET: ${{ secrets.JWT_SECRET }}
-  DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-  DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
   IMAGE_NAME: skillswap-app
 
 jobs:
@@ -129,6 +127,9 @@ jobs:
       - name: Check Docker Hub credentials
         id: docker-creds
         shell: bash
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
         run: |
           if [ -n "${DOCKER_USERNAME}" ] && [ -n "${DOCKER_PASSWORD}" ]; then
             echo "available=true" >> "$GITHUB_OUTPUT"
@@ -141,13 +142,13 @@ jobs:
         if: steps.docker-creds.outputs.available == 'true'
         uses: docker/login-action@v3
         with:
-          username: ${{ env.DOCKER_USERNAME }}
-          password: ${{ env.DOCKER_PASSWORD }}
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Tag Docker image
         if: steps.docker-creds.outputs.available == 'true'
-        run: docker tag ${{ env.IMAGE_NAME }} ${{ env.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:latest
+        run: docker tag ${{ env.IMAGE_NAME }} ${{ secrets.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:latest
 
       - name: Push Docker image
         if: steps.docker-creds.outputs.available == 'true'
-        run: docker push ${{ env.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:latest
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:latest

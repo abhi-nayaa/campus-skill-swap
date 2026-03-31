@@ -53,7 +53,7 @@ h3 {
 }
 
 .brand {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 800;
   letter-spacing: 0.02em;
 }
@@ -528,8 +528,17 @@ h3 {
   max-width: 520px;
 }
 
+body[data-page="register"] .auth-side {
+  align-self: start;
+  padding-top: 9rem;
+}
+
 .auth-brand-block {
   margin-bottom: 1.2rem;
+}
+
+.auth-side .brand {
+  font-size: 3rem;
 }
 
 .auth-card {

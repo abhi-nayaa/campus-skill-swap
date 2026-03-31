@@ -1,0 +1,11 @@
+{
+  "name": "campus-skill-swap",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "selenium-test": "node tests/selenium/run-selenium.js"
+  },
+  "devDependencies": {
+    "selenium-webdriver": "^4.30.0"
+  }
+}
